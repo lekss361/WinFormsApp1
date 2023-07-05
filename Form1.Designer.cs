@@ -1,4 +1,6 @@
-﻿namespace WinFormsApp1
+﻿using WinFormsApp1.Model;
+
+namespace WinFormsApp1
 {
     partial class Form1
     {
@@ -33,7 +35,6 @@
             outModelBindingSource = new BindingSource(components);
             textBybit = new Label();
             textkucoin = new Label();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)outModelBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -71,24 +72,12 @@
             textkucoin.Size = new Size(77, 20);
             textkucoin.TabIndex = 2;
             textkucoin.Text = "textkucoin";
-            textkucoin.Click += label3_Click_1;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(612, 183);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
             Controls.Add(textkucoin);
             Controls.Add(textBybit);
             Controls.Add(textBinance);
@@ -106,6 +95,5 @@
         private Label textBybit;
         private Label textkucoin;
         private BindingSource outModelBindingSource;
-        private Button button1;
     }
 }

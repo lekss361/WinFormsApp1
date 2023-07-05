@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1;
+﻿namespace WinFormsApp1.Model;
 
 using Binance.Net;
 using Binance.Net.Clients;
@@ -8,25 +8,12 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 
-internal class Api
-{
-    public long GetBinance()
-    {
-        var binanceRestClient = new BinanceRestClient(options =>
-        {
-        });
-
-        return 0;
-    }
-    
-}
-
 public class OutModel : INotifyPropertyChanged
 {
     private decimal binance;
     private decimal byBit;
     private decimal kucoin;
-    public  decimal Binance
+    public decimal Binance
     {
         get => binance;
         set
@@ -38,7 +25,7 @@ public class OutModel : INotifyPropertyChanged
             }
         }
     }
-    public  decimal ByBit
+    public decimal ByBit
     {
         get => byBit;
         set
@@ -50,7 +37,7 @@ public class OutModel : INotifyPropertyChanged
             }
         }
     }
-    public  decimal Kucoin
+    public decimal Kucoin
     {
         get => kucoin;
         set
