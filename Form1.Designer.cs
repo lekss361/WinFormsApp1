@@ -35,6 +35,7 @@ namespace WinFormsApp1
             outModelBindingSource = new BindingSource(components);
             textBybit = new Label();
             textkucoin = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)outModelBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -73,11 +74,21 @@ namespace WinFormsApp1
             textkucoin.TabIndex = 2;
             textkucoin.Text = "textkucoin";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(471, 61);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "BTCUSDT";
+            textBox1.Size = new Size(125, 27);
+            textBox1.TabIndex = 3;
+            textBox1.MouseLeave += textBox1_MouseLeave;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox1);
             Controls.Add(textkucoin);
             Controls.Add(textBybit);
             Controls.Add(textBinance);
@@ -95,5 +106,6 @@ namespace WinFormsApp1
         private Label textBybit;
         private Label textkucoin;
         private BindingSource outModelBindingSource;
+        private TextBox textBox1;
     }
 }

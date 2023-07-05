@@ -8,12 +8,14 @@ public partial class Form1 : Form
 {
     private IPriceServices priceServices;
     private OutModel outModel;
+    private string nameTicket;
 
     public Form1(IPriceServices priceServices)
     {
         InitializeComponent();
         outModel = new OutModel() { Binance = 0, ByBit = 0, Kucoin = 0 };
         this.priceServices = priceServices;
+        textBox1.Text = nameTicket = "BTCUSDT";
     }
 
     private void Form1_Load(object sender, EventArgs e)
@@ -24,7 +26,7 @@ public partial class Form1 : Form
             {
                 while (true)
                 {
-                    outModel = priceServices.GetAllServicesPriceTicket("BTCUSDT");
+                    outModel = priceServices.GetAllServicesPriceTicket(nameTicket);
                     Invoke((MethodInvoker)delegate
                     {
                         outModelBindingSource.DataSource = outModel;
@@ -35,5 +37,11 @@ public partial class Form1 : Form
             }
             catch (Exception ex) { }
         });
+    }
+
+    private void textBox1_MouseLeave(object sender, EventArgs e)
+    {
+        nameTicket = textBox1.Text;
+
     }
 }
